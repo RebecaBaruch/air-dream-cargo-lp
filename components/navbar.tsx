@@ -1,19 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { BiMenuAltLeft, BiX } from 'react-icons/bi'
 import { Logo } from '@/components/logo'
-
-const links = [
-  { href: '#servicos', label: 'Serviços' },
-  { href: '#diferenciais', label: 'Diferenciais' },
-  { href: '#quem-somos', label: 'Quem somos' },
-  { href: '#contato', label: 'Contato' },
-] as const
-
-const languages = ['PT', 'US', 'ES'] as const
-
-type Language = (typeof languages)[number]
+import { useLanguage } from '@/components/language-provider'
+import { languages, type Language } from '@/lib/i18n/types'
 
 function classNames(...parts: Array<string | false | undefined>) {
   return parts.filter(Boolean).join(' ')
@@ -23,15 +14,17 @@ function LanguageSwitcher({
   value,
   onChange,
   className,
+  ariaLabel,
 }: {
   value: Language
   onChange: (language: Language) => void
   className?: string
+  ariaLabel: string
 }) {
   return (
     <div
       role="group"
-      aria-label="Idioma"
+      aria-label={ariaLabel}
       className={classNames('items-center gap-3', className)}
     >
       {languages.map((language) => {
@@ -60,8 +53,19 @@ function LanguageSwitcher({
 }
 
 export function Navbar() {
+  const { language, setLanguage, t } = useLanguage()
   const [open, setOpen] = useState(false)
-  const [language, setLanguage] = useState<Language>('PT')
+
+  const links = useMemo(
+    () =>
+      [
+        { href: '#servicos', label: t.nav.services },
+        { href: '#diferenciais', label: t.nav.differentials },
+        { href: '#quem-somos', label: t.nav.about },
+        { href: '#contato', label: t.nav.contact },
+      ] as const,
+    [t.nav],
+  )
 
   useEffect(() => {
     if (!open) return
@@ -85,6 +89,15 @@ export function Navbar() {
     return () => media.removeEventListener('change', onChange)
   }, [])
 
+  useEffect(() => {
+    function onScroll() {
+      setOpen(false)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   function closeMenu() {
     setOpen(false)
   }
@@ -94,14 +107,14 @@ export function Navbar() {
       <div className="flex items-center justify-between gap-6">
         <a
           href="#inicio"
-          aria-label="Air Dream Cargo"
+          aria-label={t.nav.brand}
           className="shrink-0 rounded-sm"
           onClick={closeMenu}
         >
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label={t.nav.ariaMain}>
           {links.map((link) => (
             <a
               key={link.href}
@@ -116,6 +129,7 @@ export function Navbar() {
         <LanguageSwitcher
           value={language}
           onChange={setLanguage}
+          ariaLabel={t.nav.ariaLanguage}
           className="hidden lg:flex"
         />
 
@@ -124,7 +138,7 @@ export function Navbar() {
           className="inline-flex size-[30px] cursor-pointer items-center justify-center text-gray-900 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
-          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+          aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
           onClick={() => setOpen((value) => !value)}
         >
           {open ? (
@@ -140,7 +154,7 @@ export function Navbar() {
         hidden={!open}
         className="absolute top-full right-0 left-0 z-30 mt-4 border border-gray-200 bg-gray-0 p-4 shadow-[0_16px_40px_rgba(0,36,63,0.12)] lg:hidden"
       >
-        <nav className="flex flex-col" aria-label="Principal">
+        <nav className="flex flex-col" aria-label={t.nav.ariaMain}>
           {links.map((link) => (
             <a
               key={link.href}
@@ -155,6 +169,7 @@ export function Navbar() {
         <LanguageSwitcher
           value={language}
           onChange={setLanguage}
+          ariaLabel={t.nav.ariaLanguage}
           className="mt-4 flex"
         />
       </div>
