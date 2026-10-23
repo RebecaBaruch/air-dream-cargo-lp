@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'Air Dream Cargo',
+  description:
+    'Coordenação logística e agenciamento aéreo rápido e seguro.',
+};
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
