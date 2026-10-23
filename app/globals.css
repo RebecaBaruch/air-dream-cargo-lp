@@ -5,11 +5,75 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Font Family */
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* Colors - Cyan */
+  --color-cyan-100: #ebf7ff;
+  --color-cyan-200: #c3e7ff;
+  --color-cyan-300: #8cd2ff;
+  --color-cyan-500: #46b5fd;
+  --color-cyan-600: #1c97e6;
+  --color-cyan-700: #0068ae;
+  --color-cyan-800: #004372;
+  --color-cyan-900: #00243f;
+
+  /* Colors - Gray */
+  --color-gray-0: #fbffff;
+  --color-gray-100: #f4f4f4;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #a8a8a8;
+  --color-gray-500: #8d8d8d;
+  --color-gray-600: #6f6f6f;
+  --color-gray-700: #393939;
+  --color-gray-800: #262626;
+  --color-gray-900: #161616;
+
+  /* Colors - Support */
+  --color-support-red-100: #fee2e2;
+  --color-support-red-500: #d12d2f;
+  --color-support-red-700: #9e1112;
+
+  --color-support-orange-100: #ffedd5;
+  --color-support-orange-500: #f68737;
+  --color-support-orange-700: #c85f13;
+
+  --color-support-yellow-100: #fff4c5;
+  --color-support-yellow-500: #f8dd6f;
+  --color-support-yellow-700: #dab51c;
+
+  --color-support-green-100: #bdffc8;
+  --color-support-green-500: #38a04a;
+  --color-support-green-700: #0b5818;
+
+  /* Font Sizes (px -> rem) */
+  --text-0: 0.75rem;   /* 12px */
+  --text-1: 0.875rem;  /* 14px */
+  --text-2: 1.125rem;  /* 18px */
+  --text-3: 1.25rem;   /* 20px */
+  --text-4: 1.5rem;    /* 24px */
+  --text-5: 1.75rem;   /* 28px */
+  --text-6: 2rem;      /* 32px */
+  --text-7: 2.625rem;  /* 42px */
+  --text-8: 3rem;      /* 48px */
+  --text-9: 3.375rem;  /* 54px */
+
+  /* Line Heights */
+  --leading-0: 64px;
+  --leading-1: 58px;
+  --leading-2: 52px;
+  --leading-3: 40px;
+  --leading-4: 36px;
+  --leading-5: 32px;
+  --leading-6: 28px;
+  --leading-14: 20px;
+  --leading-18: 16px;
+
+  /* Letter Spacing */
+  --tracking-0: -0.02em;
+  --tracking-1: -0.01em;
+  --tracking-2: 0em;
 }
 
 @media (prefers-color-scheme: dark) {
