@@ -52,7 +52,7 @@ export function Hero() {
 
             <div className="flex flex-wrap gap-2 xl:gap-4">
               <Button
-                href="#cotacao"
+                href="#contato"
                 size="lg"
                 className="max-xl:h-[46px]! max-xl:gap-1! max-xl:px-2! max-xl:text-2! max-xl:leading-6!"
               >
