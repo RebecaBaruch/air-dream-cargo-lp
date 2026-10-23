@@ -1,7 +1,7 @@
 'use client'
 
-import { BsArrowRightShort } from 'react-icons/bs'
-import type { ButtonHTMLAttributes } from 'react'
+import type { IconType } from 'react-icons'
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 
 type ButtonSize = 'sm' | 'md' | 'lg'
 type ButtonVariant = 'filled' | 'outline' | 'link'
@@ -11,6 +11,9 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: ButtonSize
   variant?: ButtonVariant
   tone?: ButtonTone
+  href?: string
+  icon?: IconType
+  iconSize?: number
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -48,6 +51,16 @@ function classNames(...parts: Array<string | false | undefined>) {
   return parts.filter(Boolean).join(' ')
 }
 
+function ButtonIcon({
+  icon: Icon,
+  iconSize,
+}: {
+  icon: IconType
+  iconSize: number
+}) {
+  return <Icon aria-hidden size={iconSize} className="shrink-0" />
+}
+
 export function Button({
   size = 'md',
   variant = 'filled',
@@ -56,9 +69,14 @@ export function Button({
   children,
   disabled,
   type = 'button',
+  href,
+  icon,
+  iconSize = 16,
   ...props
 }: ButtonProps) {
-  const icon = <BsArrowRightShort aria-hidden className="size-4 shrink-0" />
+  const iconNode = icon ? (
+    <ButtonIcon icon={icon} iconSize={iconSize} />
+  ) : null
 
   const toneClass = disabled
     ? variant === 'filled'
@@ -72,31 +90,44 @@ export function Button({
         ? outlineToneClasses[tone]
         : linkToneClasses[tone]
 
+  const classes = classNames(
+    'inline-flex items-center justify-center rounded font-sans font-semibold tracking-2 whitespace-nowrap transition-colors',
+    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700',
+    'cursor-pointer disabled:cursor-not-allowed',
+    variant === 'link' ? linkSizeClasses[size] : sizeClasses[size],
+    toneClass,
+    className,
+  )
+
+  const content =
+    variant === 'link' ? (
+      <>
+        {children}
+        {iconNode}
+      </>
+    ) : (
+      <>
+        {iconNode}
+        {children}
+      </>
+    )
+
+  if (href) {
+    return (
+      <a
+        href={disabled ? undefined : href}
+        aria-disabled={disabled || undefined}
+        className={classes}
+        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {content}
+      </a>
+    )
+  }
+
   return (
-    <button
-      type={type}
-      disabled={disabled}
-      className={classNames(
-        'inline-flex items-center justify-center rounded font-sans font-semibold tracking-2 whitespace-nowrap transition-colors',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700',
-        'cursor-pointer disabled:cursor-not-allowed',
-        variant === 'link' ? linkSizeClasses[size] : sizeClasses[size],
-        toneClass,
-        className,
-      )}
-      {...props}
-    >
-      {variant === 'link' ? (
-        <>
-          {children}
-          {icon}
-        </>
-      ) : (
-        <>
-          {icon}
-          {children}
-        </>
-      )}
+    <button type={type} disabled={disabled} className={classes} {...props}>
+      {content}
     </button>
   )
 }
