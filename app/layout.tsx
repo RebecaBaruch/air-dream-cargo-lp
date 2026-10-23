@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Providers } from '@/components/providers';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={plusJakartaSans.variable}>
       <body className="font-sans antialiased text-gray-900 bg-gray-0">
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

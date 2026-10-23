@@ -1,28 +1,25 @@
+'use client'
+
 import type { IconType } from 'react-icons'
 import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa6'
-
-const tagline =
-  'Soluções em agenciamento aéreo e assessoria operacional para embarques internacionais e nacionais.'
+import { useLanguage } from '@/components/language-provider'
 
 const contactEmail = 'example@email.com.br'
 const contactPhone = '+55 011 1234-5678'
 
-const address =
-  'Avenida Profa Ida Kolb 225, Apt 153, Jardim das Laranjeiras, São Paulo SP 02518-000'
-
 const socialLinks = [
   {
-    label: 'WhatsApp',
+    labelKey: 'whatsapp' as const,
     href: 'https://wa.me/5500000000000',
     icon: FaWhatsapp,
   },
   {
-    label: 'Instagram',
+    labelKey: 'instagram' as const,
     href: 'https://instagram.com/',
     icon: FaInstagram,
   },
   {
-    label: 'LinkedIn',
+    labelKey: 'linkedin' as const,
     href: 'https://linkedin.com/',
     icon: FaLinkedin,
   },
@@ -36,11 +33,22 @@ function FooterHeading({ children }: { children: string }) {
   )
 }
 
-function SocialLinks() {
+function SocialLinks({ ariaLabel }: { ariaLabel: string }) {
+  const labels = {
+    whatsapp: 'WhatsApp',
+    instagram: 'Instagram',
+    linkedin: 'LinkedIn',
+  }
+
   return (
-    <nav aria-label="Redes sociais" className="flex items-center gap-3">
+    <nav aria-label={ariaLabel} className="flex items-center gap-3">
       {socialLinks.map((link) => (
-        <SocialLink key={link.label} {...link} />
+        <SocialLink
+          key={link.labelKey}
+          label={labels[link.labelKey]}
+          href={link.href}
+          icon={link.icon}
+        />
       ))}
     </nav>
   )
@@ -68,20 +76,26 @@ function SocialLink({
   )
 }
 
-function FooterTagline({ className }: { className?: string }) {
+function FooterTagline({
+  text,
+  className,
+}: {
+  text: string
+  className?: string
+}) {
   return (
     <p
       className={`font-bold tracking-1 text-cyan-900 uppercase text-[clamp(1.25rem,1.39vw,1.5rem)] leading-[1.25] lg:leading-[1.2] ${className ?? ''}`}
     >
-      {tagline}
+      {text}
     </p>
   )
 }
 
-function FooterContactBlock() {
+function FooterContactBlock({ heading }: { heading: string }) {
   return (
     <div className="flex flex-col gap-3">
-      <FooterHeading>Entre em contato</FooterHeading>
+      <FooterHeading>{heading}</FooterHeading>
       <div className="flex flex-col gap-2 text-1 leading-14 font-normal tracking-2 text-gray-700 lg:text-2 lg:leading-6">
         <a
           href={`mailto:${contactEmail}`}
@@ -100,10 +114,16 @@ function FooterContactBlock() {
   )
 }
 
-function FooterLocationBlock() {
+function FooterLocationBlock({
+  heading,
+  address,
+}: {
+  heading: string
+  address: string
+}) {
   return (
     <div className="flex flex-col gap-3">
-      <FooterHeading>Onde estamos</FooterHeading>
+      <FooterHeading>{heading}</FooterHeading>
       <p className="max-w-[22rem] text-1 leading-14 font-normal tracking-2 text-gray-700 lg:max-w-[26rem] lg:text-2 lg:leading-6">
         {address}
       </p>
@@ -111,11 +131,11 @@ function FooterLocationBlock() {
   )
 }
 
-function FooterBrand() {
+function FooterBrand({ brandLabel }: { brandLabel: string }) {
   return (
     <a
       href="#inicio"
-      aria-label="Air Dream Cargo"
+      aria-label={brandLabel}
       className="inline-flex w-fit rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700"
     >
       <img
@@ -129,70 +149,73 @@ function FooterBrand() {
   )
 }
 
-function FooterLegalBar() {
+function FooterLegalBar({
+  copyright,
+  privacy,
+}: {
+  copyright: string
+  privacy: string
+}) {
   return (
     <div className="bg-cyan-900 px-4 py-4 lg:px-[4.44%] lg:py-5">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-3 text-0 leading-18 font-normal tracking-2 text-gray-0 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:text-1 lg:leading-14">
-        <p>© 2026 Air Dream Cargo. All rights reserved.</p>
+        <p>{copyright}</p>
         <a
           href="#"
           className="w-fit transition-colors hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-0"
         >
-          Privacy Policy
+          {privacy}
         </a>
       </div>
     </div>
   )
 }
 
-function FooterMobile() {
-  return (
-    <div className="flex flex-col px-4 py-16 lg:hidden">
-      <div className="border-b border-gray-200 pb-8">
-        <SocialLinks />
-      </div>
-
-      <div className="flex flex-col gap-8 pt-8">
-        <FooterContactBlock />
-        <FooterLocationBlock />
-        <FooterTagline />
-        <div className="border-t border-gray-200 pt-8">
-          <FooterBrand />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function FooterDesktop() {
-  return (
-    <div className="hidden px-[4.44%] py-[clamp(4rem,5.56vw,5rem)] lg:grid lg:grid-cols-2 lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-10">
-      <div className="flex min-h-[17.5rem] flex-col justify-between gap-10">
-        <div className="flex flex-col gap-8">
-          <FooterTagline className="max-w-[34rem]" />
-          <SocialLinks />
-        </div>
-        <FooterBrand />
-      </div>
-
-      <div className="flex flex-col gap-10 lg:pt-1">
-        <FooterContactBlock />
-        <FooterLocationBlock />
-      </div>
-    </div>
-  )
-}
-
 export function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-gray-0">
       <div className="border-y border-gray-200">
         <div className="mx-auto max-w-[1440px]">
-          <FooterMobile />
-          <FooterDesktop />
+          <div className="flex flex-col px-4 py-16 lg:hidden">
+            <div className="border-b border-gray-200 pb-8">
+              <SocialLinks ariaLabel={t.footer.socialAria} />
+            </div>
+
+            <div className="flex flex-col gap-8 pt-8">
+              <FooterContactBlock heading={t.footer.contactHeading} />
+              <FooterLocationBlock
+                heading={t.footer.locationHeading}
+                address={t.footer.address}
+              />
+              <FooterTagline text={t.footer.tagline} />
+              <div className="border-t border-gray-200 pt-8">
+                <FooterBrand brandLabel={t.nav.brand} />
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden px-[4.44%] py-[clamp(4rem,5.56vw,5rem)] lg:grid lg:grid-cols-2 lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-10">
+            <div className="flex min-h-[17.5rem] flex-col justify-between gap-10">
+              <div className="flex flex-col gap-8">
+                <FooterTagline text={t.footer.tagline} className="max-w-[34rem]" />
+                <SocialLinks ariaLabel={t.footer.socialAria} />
+              </div>
+              <FooterBrand brandLabel={t.nav.brand} />
+            </div>
+
+            <div className="flex flex-col gap-10 lg:pt-1">
+              <FooterContactBlock heading={t.footer.contactHeading} />
+              <FooterLocationBlock
+                heading={t.footer.locationHeading}
+                address={t.footer.address}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <FooterLegalBar />
+      <FooterLegalBar copyright={t.footer.copyright} privacy={t.footer.privacy} />
     </footer>
   )
 }
