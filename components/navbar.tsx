@@ -89,6 +89,15 @@ export function Navbar() {
     return () => media.removeEventListener('change', onChange)
   }, [])
 
+  useEffect(() => {
+    function onScroll() {
+      setOpen(false)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   function closeMenu() {
     setOpen(false)
   }
