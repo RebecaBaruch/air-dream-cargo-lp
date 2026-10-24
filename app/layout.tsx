@@ -26,7 +26,8 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/hero-image-desktop.webp"
+          type="image/avif"
+          href="/images/hero-image-desktop.avif"
           media="(min-width: 1024px)"
         />
         <link
