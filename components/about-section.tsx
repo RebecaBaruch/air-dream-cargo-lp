@@ -16,6 +16,7 @@ function AboutImage({ className }: { className?: string }) {
         height={342}
         decoding="async"
         loading="lazy"
+        sizes="(min-width: 1024px) 36rem, 100vw"
         className="absolute inset-0 size-full object-cover"
       />
     </div>
@@ -29,7 +30,7 @@ export function AboutSection() {
     <section
       id="quem-somos"
       aria-labelledby="about-heading"
-      className="bg-cyan-100 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
+      className="below-fold bg-cyan-100 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
     >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,36.125rem)] lg:items-center lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-0">
         <div className="flex flex-col gap-4 lg:gap-6">

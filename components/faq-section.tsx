@@ -18,7 +18,7 @@ export function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="bg-gray-0 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
+      className="below-fold bg-gray-0 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
     >
       <div className="mx-auto flex max-w-[1440px] flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-0">
         <div className="flex flex-col gap-4 lg:gap-5">

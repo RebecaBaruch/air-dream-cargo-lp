@@ -20,7 +20,7 @@ export function DifferentialsSection() {
     <section
       id="diferenciais"
       aria-labelledby="differentials-heading"
-      className="bg-gray-0 px-4 py-16 lg:px-0 lg:py-[clamp(4rem,5.56vw,5rem)]"
+      className="below-fold bg-gray-0 px-4 py-16 lg:px-0 lg:py-[clamp(4rem,5.56vw,5rem)]"
     >
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-8 lg:gap-[clamp(2rem,2.78vw,2.5rem)]">
         <div className="flex w-full flex-col items-center gap-4 text-center lg:gap-5">

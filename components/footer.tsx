@@ -177,7 +177,7 @@ export function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-gray-0">
+    <footer className="below-fold bg-gray-0">
       <div className="border-y border-gray-200">
         <div className="mx-auto max-w-[1440px]">
           <div className="flex flex-col px-4 py-16 lg:px-0 lg:hidden">

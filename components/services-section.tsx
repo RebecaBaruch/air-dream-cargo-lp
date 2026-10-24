@@ -22,6 +22,7 @@ function ServicesMediaGrid({ className }: { className?: string }) {
           height={307}
           decoding="async"
           loading="lazy"
+          sizes="(min-width: 1024px) 55vw, 100vw"
           className="absolute inset-0 size-full object-cover"
         />
       </div>
@@ -34,6 +35,7 @@ function ServicesMediaGrid({ className }: { className?: string }) {
             height={307}
             decoding="async"
             loading="lazy"
+            sizes="(min-width: 1024px) 27vw, 50vw"
             className="absolute inset-0 size-full object-cover"
           />
         </div>
@@ -45,6 +47,7 @@ function ServicesMediaGrid({ className }: { className?: string }) {
             height={307}
             decoding="async"
             loading="lazy"
+            sizes="(min-width: 1024px) 27vw, 50vw"
             className="absolute inset-0 size-full object-cover"
           />
         </div>
@@ -60,7 +63,7 @@ export function ServicesSection() {
     <section
       id="servicos"
       aria-labelledby="services-heading"
-      className="bg-gray-0 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
+      className="below-fold bg-gray-0 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
     >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 lg:grid-cols-[38.75fr_61.25fr] lg:grid-rows-[auto_minmax(0,auto)] lg:items-scratch lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-[clamp(1.5rem,2.22vw,2.5rem)]">
         <p className="flex items-start text-1 leading-14 font-semibold text-gray-900 lg:col-start-1 lg:row-start-1 lg:text-2 lg:leading-6">

@@ -9,6 +9,7 @@ type BreakpointImageProps = {
   height?: number
   alt?: string
   className?: string
+  sizes?: string
   priority?: boolean
 }
 
@@ -20,18 +21,22 @@ export function BreakpointImage({
   height,
   alt = '',
   className,
+  sizes = '100vw',
   priority = false,
 }: BreakpointImageProps) {
   return (
     <picture>
-      {avif ? <source type="image/avif" media={media} srcSet={avif} /> : null}
-      <source type="image/webp" media={media} srcSet={src} />
+      {avif ? (
+        <source type="image/avif" media={media} srcSet={avif} sizes={sizes} />
+      ) : null}
+      <source type="image/webp" media={media} srcSet={src} sizes={sizes} />
       <img
         src={TRANSPARENT_PIXEL}
         alt={alt}
         width={width}
         height={height}
         className={className}
+        sizes={sizes}
         decoding="async"
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'low'}
