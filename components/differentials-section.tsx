@@ -19,7 +19,7 @@ export function DifferentialsSection() {
     <section
       id="diferenciais"
       aria-labelledby="differentials-heading"
-      className="bg-gray-0 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
+      className="bg-gray-0 px-4 py-16 lg:px-0 lg:py-[clamp(4rem,5.56vw,5rem)]"
     >
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-8 lg:gap-[clamp(2rem,2.78vw,2.5rem)]">
         <div className="flex w-full flex-col items-center gap-4 text-center lg:gap-5">
@@ -56,7 +56,7 @@ export function DifferentialsSection() {
 
         <div className="relative aspect-[358/425] w-full overflow-hidden rounded-sm lg:hidden">
           <img
-            src="/airplane-diff.svg"
+            src="/images/airplane-diff.webp"
             alt=""
             width={358}
             height={425}
@@ -83,7 +83,7 @@ export function DifferentialsSection() {
         </div>
 
         <div
-          className={`hidden w-full max-w-[56rem] lg:grid lg:grid-cols-2 ${cardGapClass}`}
+          className={`hidden w-full lg:grid lg:grid-cols-2 ${cardGapClass}`}
         >
           {t.differentials.items.map((item, index) => {
             const Icon = differentiatorIcons[index] ?? LuAward

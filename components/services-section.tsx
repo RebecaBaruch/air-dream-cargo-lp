@@ -1,22 +1,22 @@
-'use client'
+"use client";
 
-import { LuFileCheck, LuGlobe, LuHandshake } from 'react-icons/lu'
-import { useLanguage } from '@/components/language-provider'
-import { ServiceCard } from '@/components/service-card'
+import { LuFileCheck, LuGlobe, LuHandshake } from "react-icons/lu";
+import { useLanguage } from "@/components/language-provider";
+import { ServiceCard } from "@/components/service-card";
 
-const serviceIcons = [LuGlobe, LuHandshake, LuFileCheck] as const
+const serviceIcons = [LuGlobe, LuHandshake, LuFileCheck] as const;
 
-const mediaGapClass = 'gap-[clamp(0.5rem,0.56vw,0.75rem)]'
-const cardGapClass = 'gap-[clamp(0.75rem,0.83vw,1rem)]'
+const mediaGapClass = "gap-[clamp(0.5rem,0.56vw,0.75rem)]";
+const cardGapClass = "gap-[clamp(0.75rem,0.83vw,1rem)]";
 
 function ServicesMediaGrid({ className }: { className?: string }) {
   return (
     <div
-      className={`flex min-h-0 flex-col ${mediaGapClass} lg:col-start-2 lg:row-start-2 ${className ?? ''}`}
+      className={`flex min-h-0 flex-col ${mediaGapClass} lg:col-start-2 lg:row-start-2 ${className ?? ""}`}
     >
       <div className="relative aspect-[883/307] w-full shrink-0 overflow-hidden rounded-sm">
         <img
-          src="/shipping-01.svg"
+          src="/images/shipping-01.webp"
           alt=""
           width={883}
           height={307}
@@ -26,7 +26,7 @@ function ServicesMediaGrid({ className }: { className?: string }) {
       <div className={`grid min-h-0 flex-1 grid-cols-2 ${mediaGapClass}`}>
         <div className="relative aspect-[430/307] min-h-0 overflow-hidden rounded-sm lg:aspect-auto lg:h-full">
           <img
-            src="/shipping-02.svg"
+            src="/images/shipping-02.webp"
             alt=""
             width={430}
             height={307}
@@ -35,7 +35,7 @@ function ServicesMediaGrid({ className }: { className?: string }) {
         </div>
         <div className="relative aspect-[430/307] min-h-0 overflow-hidden rounded-sm lg:aspect-auto lg:h-full">
           <img
-            src="/shopping-03.svg"
+            src="/images/shipping-03.webp"
             alt=""
             width={430}
             height={307}
@@ -44,11 +44,11 @@ function ServicesMediaGrid({ className }: { className?: string }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export function ServicesSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section
@@ -56,10 +56,12 @@ export function ServicesSection() {
       aria-labelledby="services-heading"
       className="bg-gray-0 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
     >
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 lg:grid-cols-[38.75fr_61.25fr] lg:grid-rows-[auto_minmax(0,auto)] lg:items-stretch lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-[clamp(1.5rem,2.22vw,2.5rem)]">
-        <p className="flex items-center gap-2 text-1 leading-14 font-semibold text-gray-900 lg:col-start-1 lg:row-start-1 lg:text-2 lg:leading-6">
-          <span aria-hidden className="size-2 shrink-0 bg-gray-900" />
-          {t.services.eyebrow}
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 lg:grid-cols-[38.75fr_61.25fr] lg:grid-rows-[auto_minmax(0,auto)] lg:items-scratch lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-[clamp(1.5rem,2.22vw,2.5rem)]">
+        <p className="flex items-start text-1 leading-14 font-semibold text-gray-900 lg:col-start-1 lg:row-start-1 lg:text-2 lg:leading-6">
+          <div className="flex items-center gap-2">
+            <span aria-hidden className="size-2 shrink-0 bg-gray-900" />
+            {t.services.eyebrow}
+          </div>
         </p>
 
         <h2
@@ -75,7 +77,7 @@ export function ServicesSection() {
           className={`-mx-4 flex overflow-x-auto px-4 pb-1 ${cardGapClass} [-ms-overflow-style:none] [scrollbar-width:none] lg:col-start-1 lg:row-start-2 lg:mx-0 lg:min-h-0 lg:flex-col lg:overflow-visible lg:px-0 [&::-webkit-scrollbar]:hidden`}
         >
           {t.services.items.map((service, index) => {
-            const Icon = serviceIcons[index] ?? LuGlobe
+            const Icon = serviceIcons[index] ?? LuGlobe;
             return (
               <ServiceCard
                 key={service.title}
@@ -84,10 +86,10 @@ export function ServicesSection() {
                 description={service.description}
                 className="w-[min(85vw,20rem)] shrink-0 snap-start lg:w-full lg:min-h-0 lg:flex-1 lg:shrink"
               />
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

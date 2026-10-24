@@ -10,7 +10,7 @@ function AboutImage({ className }: { className?: string }) {
       className={`relative aspect-[578/342] w-full overflow-hidden rounded-sm ${className ?? ''}`}
     >
       <img
-        src="/workers.svg"
+        src="/images/workers.webp"
         alt=""
         width={578}
         height={342}

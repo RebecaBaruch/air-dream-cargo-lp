@@ -19,21 +19,21 @@ export function ContactSection() {
     >
       <div className="relative w-full">
         <img
-          src="/contact-image-mobile.svg"
+          src="/images/contact-image-mobile.webp"
           alt=""
           width={390}
           height={590}
           className="block h-auto w-full max-w-full lg:hidden"
         />
         <img
-          src="/contact-image-desktop.svg"
+          src="/images/contact-image-desktop.webp"
           alt=""
           width={1440}
           height={590}
           className="hidden h-auto w-full max-w-full lg:block"
         />
 
-        <div className="absolute inset-0 mx-auto flex max-w-[1440px] flex-col justify-start px-4 pt-[clamp(3rem,12.3vw,4.625rem)] lg:justify-center lg:px-[4.44%] lg:py-[clamp(3rem,5.56vw,5rem)]">
+        <div className="absolute inset-0 mx-auto flex max-w-[1440px] flex-col justify-start px-4 pt-[clamp(3rem,12.3vw,4.625rem)] lg:justify-center lg:px-0 lg:py-[clamp(3rem,5.56vw,5rem)]">
           <div className="flex w-full flex-col gap-6 lg:max-w-[min(36rem,42vw)] lg:gap-8">
             <div className="flex flex-col gap-3 lg:gap-4">
               <p className="flex items-center gap-2 text-1 leading-14 font-semibold text-gray-0 lg:text-2 lg:leading-6">

@@ -5,14 +5,14 @@ type LogoProps = {
 export function Logo({ className }: LogoProps) {
   return (
     <span
-      className={`relative block h-[30px] w-[47px] overflow-hidden lg:h-[27px] lg:w-[190px] ${className ?? ''}`}
+      className={`relative block h-[30px] w-[47px] overflow-hidden lg:h-[30px] lg:w-[250px] ${className ?? ''}`}
     >
       <img
         src="/adc-logo.svg"
         alt=""
-        width={190}
-        height={27}
-        className="h-[30px] w-auto max-w-none lg:h-[27px]"
+        width={250}
+        height={30}
+        className="h-[30px] w-auto max-w-none lg:h-[30px]"
       />
     </span>
   )
