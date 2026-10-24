@@ -76,13 +76,6 @@
   --tracking-2: 0em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -97,4 +90,9 @@ body {
   background: var(--color-gray-0);
   color: var(--color-gray-900);
   font-family: var(--font-sans), sans-serif;
+}
+
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 40rem;
 }

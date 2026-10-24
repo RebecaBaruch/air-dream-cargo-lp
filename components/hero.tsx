@@ -20,7 +20,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative bg-gray-0"
     >
-      <div className="relative w-full lg:h-[95vh]">
+      <div className="relative w-full lg:aspect-[1440/700] lg:h-[95vh]">
         <BreakpointImage
           src="/images/hero-image-desktop-hq.webp"
           avif="/images/hero-image-desktop.avif"
@@ -29,7 +29,7 @@ export function Hero() {
           width={1440}
           height={700}
           priority
-          className="hidden h-auto w-full lg:block h-full"
+          className="hidden h-auto w-full object-cover lg:block lg:h-full"
         />
       </div>
 
@@ -100,6 +100,7 @@ export function Hero() {
       <div>
         <BreakpointImage
           src="/images/hero-image-mobile.webp"
+          avif="/images/hero-image-mobile.avif"
           media="(max-width: 1023px)"
           alt=""
           width={390}

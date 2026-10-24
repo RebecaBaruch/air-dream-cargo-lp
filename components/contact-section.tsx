@@ -16,7 +16,7 @@ export function ContactSection() {
     <section
       id="contato"
       aria-labelledby="contact-heading"
-      className="relative w-full overflow-hidden bg-gray-100"
+      className="below-fold relative w-full overflow-hidden bg-gray-100"
     >
       <div className="relative w-full">
         <BreakpointImage
