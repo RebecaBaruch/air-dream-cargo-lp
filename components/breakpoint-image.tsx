@@ -3,6 +3,7 @@ const TRANSPARENT_PIXEL =
 
 type BreakpointImageProps = {
   src: string
+  avif?: string
   media: string
   width: number
   height?: number
@@ -13,6 +14,7 @@ type BreakpointImageProps = {
 
 export function BreakpointImage({
   src,
+  avif,
   media,
   width,
   height,
@@ -22,7 +24,8 @@ export function BreakpointImage({
 }: BreakpointImageProps) {
   return (
     <picture>
-      <source media={media} srcSet={src} />
+      {avif ? <source type="image/avif" media={media} srcSet={avif} /> : null}
+      <source type="image/webp" media={media} srcSet={src} />
       <img
         src={TRANSPARENT_PIXEL}
         alt={alt}

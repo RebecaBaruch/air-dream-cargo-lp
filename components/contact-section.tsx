@@ -28,7 +28,8 @@ export function ContactSection() {
           className="block h-auto w-full max-w-full lg:hidden"
         />
         <BreakpointImage
-          src="/images/contact-image-desktop.webp"
+          src="/images/contact-image-desktop-hq.webp"
+          avif="/images/contact-image-desktop.avif"
           media="(min-width: 1024px)"
           alt=""
           width={1440}

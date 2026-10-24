@@ -22,7 +22,8 @@ export function Hero() {
     >
       <div className="relative w-full lg:h-[95vh]">
         <BreakpointImage
-          src="/images/hero-image-desktop.webp"
+          src="/images/hero-image-desktop-hq.webp"
+          avif="/images/hero-image-desktop.avif"
           media="(min-width: 1024px)"
           alt=""
           width={1440}
