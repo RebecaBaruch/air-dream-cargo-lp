@@ -12,6 +12,7 @@ export function Logo({ className }: LogoProps) {
         alt=""
         width={250}
         height={30}
+        decoding="async"
         className="h-[30px] w-auto max-w-none lg:h-[30px]"
       />
     </span>

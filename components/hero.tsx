@@ -1,5 +1,6 @@
 "use client";
 
+import { BreakpointImage } from "@/components/breakpoint-image";
 import { Button } from "@/components/button";
 import { useLanguage } from "@/components/language-provider";
 import { Navbar } from "@/components/navbar";
@@ -20,10 +21,13 @@ export function Hero() {
       className="relative bg-gray-0"
     >
       <div className="relative w-full lg:h-[95vh]">
-        <img
+        <BreakpointImage
           src="/images/hero-image-desktop.webp"
+          media="(min-width: 1024px)"
           alt=""
           width={1440}
+          height={700}
+          priority
           className="hidden h-auto w-full lg:block h-full"
         />
       </div>
@@ -93,11 +97,13 @@ export function Hero() {
       </div>
 
       <div>
-        <img
+        <BreakpointImage
           src="/images/hero-image-mobile.webp"
+          media="(max-width: 1023px)"
           alt=""
           width={390}
           height={423}
+          priority
           className="relative z-0 -mt-[25%] h-auto w-full lg:hidden"
         />
       </div>
