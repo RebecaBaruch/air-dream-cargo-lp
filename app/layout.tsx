@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: 'Air Dream Cargo',
   description:
     'Coordenação logística e agenciamento aéreo rápido e seguro.',
+  icons: {
+    icon: [{ url: '/Ad-fav-icon.svg', type: 'image/svg+xml' }],
+    shortcut: '/Ad-fav-icon.svg',
+    apple: '/Ad-fav-icon.svg',
+  },
   robots: {
     index: true,
     follow: true,
