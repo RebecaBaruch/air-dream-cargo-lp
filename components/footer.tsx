@@ -71,7 +71,7 @@ function SocialLink({
       rel="noreferrer"
       className="inline-flex size-10 items-center justify-center rounded-sm bg-cyan-100 text-cyan-900 transition-colors hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700"
     >
-      <Icon aria-hidden size={20} className="shrink-0" />
+      <Icon aria-hidden size={24} className="shrink-0" />
     </a>
   )
 }
@@ -178,7 +178,7 @@ export function Footer() {
     <footer className="bg-gray-0">
       <div className="border-y border-gray-200">
         <div className="mx-auto max-w-[1440px]">
-          <div className="flex flex-col px-4 py-16 lg:hidden">
+          <div className="flex flex-col px-4 py-16 lg:px-0 lg:hidden">
             <div className="border-b border-gray-200 pb-8">
               <SocialLinks ariaLabel={t.footer.socialAria} />
             </div>
@@ -196,7 +196,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="hidden px-[4.44%] py-[clamp(4rem,5.56vw,5rem)] lg:grid lg:grid-cols-2 lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-10">
+          <div className="hidden px-[4.44%] py-[clamp(4rem,5.56vw,5rem)] lg:px-0 lg:grid lg:grid-cols-2 lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-10">
             <div className="flex min-h-[17.5rem] flex-col justify-between gap-10">
               <div className="flex flex-col gap-8">
                 <FooterTagline text={t.footer.tagline} className="max-w-[34rem]" />

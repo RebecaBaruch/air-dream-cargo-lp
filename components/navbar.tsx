@@ -37,7 +37,7 @@ function LanguageSwitcher({
             aria-pressed={active}
             onClick={() => onChange(language)}
             className={classNames(
-              'inline-flex size-9 cursor-pointer items-center justify-center rounded-full text-1 leading-14 transition-colors',
+              'inline-flex size-9 cursor-pointer items-center justify-center rounded-full text-2 leading-14 transition-colors',
               'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700',
               active
                 ? 'border border-cyan-800 bg-cyan-100 font-bold text-cyan-900'
@@ -119,7 +119,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-1 leading-14 font-medium text-gray-900 transition-colors hover:text-cyan-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700"
+              className="text-2 leading-14 font-medium text-gray-900 transition-colors hover:text-cyan-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700"
             >
               {link.label}
             </a>
