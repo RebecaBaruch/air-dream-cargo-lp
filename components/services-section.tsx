@@ -20,6 +20,8 @@ function ServicesMediaGrid({ className }: { className?: string }) {
           alt=""
           width={883}
           height={307}
+          decoding="async"
+          loading="lazy"
           className="absolute inset-0 size-full object-cover"
         />
       </div>
@@ -30,6 +32,8 @@ function ServicesMediaGrid({ className }: { className?: string }) {
             alt=""
             width={430}
             height={307}
+            decoding="async"
+            loading="lazy"
             className="absolute inset-0 size-full object-cover"
           />
         </div>
@@ -39,6 +43,8 @@ function ServicesMediaGrid({ className }: { className?: string }) {
             alt=""
             width={430}
             height={307}
+            decoding="async"
+            loading="lazy"
             className="absolute inset-0 size-full object-cover"
           />
         </div>

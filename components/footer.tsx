@@ -143,6 +143,8 @@ function FooterBrand({ brandLabel }: { brandLabel: string }) {
         alt=""
         width={254}
         height={36}
+        decoding="async"
+        loading="lazy"
         className="h-[clamp(2.5rem,10.25vw,2.75rem)] w-auto max-w-none"
       />
     </a>

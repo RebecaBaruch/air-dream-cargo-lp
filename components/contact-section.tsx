@@ -2,6 +2,7 @@
 
 import { FaWhatsapp } from 'react-icons/fa6'
 import { LuMail } from 'react-icons/lu'
+import { BreakpointImage } from '@/components/breakpoint-image'
 import { Button } from '@/components/button'
 import { useLanguage } from '@/components/language-provider'
 
@@ -18,15 +19,17 @@ export function ContactSection() {
       className="relative w-full overflow-hidden bg-gray-100"
     >
       <div className="relative w-full">
-        <img
+        <BreakpointImage
           src="/images/contact-image-mobile.webp"
+          media="(max-width: 1023px)"
           alt=""
           width={390}
           height={590}
           className="block h-auto w-full max-w-full lg:hidden"
         />
-        <img
+        <BreakpointImage
           src="/images/contact-image-desktop.webp"
+          media="(min-width: 1024px)"
           alt=""
           width={1440}
           height={590}

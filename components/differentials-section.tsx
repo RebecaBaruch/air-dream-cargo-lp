@@ -6,6 +6,7 @@ import {
   LuMessageCircle,
   LuShieldCheck,
 } from 'react-icons/lu'
+import { BreakpointImage } from '@/components/breakpoint-image'
 import { useLanguage } from '@/components/language-provider'
 import { ServiceCard } from '@/components/service-card'
 
@@ -55,8 +56,9 @@ export function DifferentialsSection() {
         </div>
 
         <div className="relative aspect-[358/425] w-full overflow-hidden rounded-sm lg:hidden">
-          <img
+          <BreakpointImage
             src="/images/airplane-diff.webp"
+            media="(max-width: 1023px)"
             alt=""
             width={358}
             height={425}

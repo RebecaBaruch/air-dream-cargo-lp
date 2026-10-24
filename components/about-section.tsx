@@ -14,6 +14,8 @@ function AboutImage({ className }: { className?: string }) {
         alt=""
         width={578}
         height={342}
+        decoding="async"
+        loading="lazy"
         className="absolute inset-0 size-full object-cover"
       />
     </div>

@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
   variable: '--font-plus-jakarta',
+  display: 'swap',
 });
 
 export default function RootLayout({
@@ -22,6 +22,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={plusJakartaSans.variable}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-image-desktop.webp"
+          media="(min-width: 1024px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-image-mobile.webp"
+          media="(max-width: 1023px)"
+        />
+      </head>
       <body className="font-sans antialiased text-gray-900 bg-gray-0">
         <Providers>{children}</Providers>
       </body>
