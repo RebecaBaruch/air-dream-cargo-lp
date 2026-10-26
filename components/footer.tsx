@@ -179,7 +179,7 @@ export function Footer() {
   return (
     <footer className="below-fold bg-gray-0">
       <div className="border-y border-gray-200">
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto max-w-[1440px] lg:px-[4.44%] 2xl:px-0">
           <div className="flex flex-col px-4 py-16 lg:px-0 lg:hidden">
             <div className="border-b border-gray-200 pb-8">
               <SocialLinks ariaLabel={t.footer.socialAria} />

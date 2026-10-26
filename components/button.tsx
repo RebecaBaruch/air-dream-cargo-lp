@@ -19,13 +19,13 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 const sizeClasses: Record<ButtonSize, string> = {
   sm: 'h-[42px] gap-3 px-2 text-1 leading-14',
   md: 'h-[50px] gap-3 px-3 text-2 leading-6',
-  lg: 'h-[56px] gap-3 px-4 text-3 leading-5',
+  lg: 'h-[56px] gap-3 px-4 text-2 leading-5',
 }
 
 const linkSizeClasses: Record<ButtonSize, string> = {
   sm: 'gap-2 text-1 leading-14',
   md: 'gap-2 text-2 leading-6',
-  lg: 'gap-2 text-3 leading-5',
+  lg: 'gap-2 text-2 leading-5',
 }
 
 const filledToneClasses: Record<ButtonTone, string> = {
