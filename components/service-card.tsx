@@ -67,7 +67,7 @@ export function ServiceCard({
         <h3 className="text-3 font-semibold leading-[1.2] tracking-0 text-cyan-900 lg:text-[clamp(1.25rem,1.39vw,1.5rem)] lg:leading-[1.2]">
           {title}
         </h3>
-        <p className="text-body font-normal leading-body tracking-2 text-gray-700 lg:text-2">
+        <p className="text-body font-normal leading-body tracking-2 text-gray-700 lg:text-[clamp(0.875rem,1.11vw,1.125rem)] lg:leading-6">
           {description}
         </p>
       </div>
