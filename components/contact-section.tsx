@@ -5,6 +5,7 @@ import { LuMail } from "react-icons/lu";
 import { BreakpointImage } from "@/components/breakpoint-image";
 import { Button } from "@/components/button";
 import { useLanguage } from "@/components/language-provider";
+import { imageAlt } from "@/lib/seo/image-alt";
 
 const mobileButtonClass =
   "h-[46px]! w-full justify-center gap-2! px-2! text-2! leading-6!";
@@ -21,8 +22,9 @@ export function ContactSection() {
       <div className="relative w-full">
         <BreakpointImage
           src="/images/contact-image-mobile.webp"
+          avif="/images/contact-image-mobile.avif"
           media="(max-width: 1023px)"
-          alt=""
+          alt={imageAlt.contact}
           width={390}
           height={590}
           className="block h-auto w-full max-w-full lg:hidden"
@@ -31,7 +33,7 @@ export function ContactSection() {
           src="/images/contact-image-desktop-hq.webp"
           avif="/images/contact-image-desktop.avif"
           media="(min-width: 1024px)"
-          alt=""
+          alt={imageAlt.contact}
           width={1440}
           height={590}
           className="hidden h-auto w-full max-w-full lg:block"

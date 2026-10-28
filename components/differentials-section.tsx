@@ -9,6 +9,7 @@ import {
 import { BreakpointImage } from '@/components/breakpoint-image'
 import { useLanguage } from '@/components/language-provider'
 import { ServiceCard } from '@/components/service-card'
+import { imageAlt } from '@/lib/seo/image-alt'
 
 const cardGapClass = 'gap-[clamp(0.75rem,1.11vw,1rem)]'
 const differentiatorIcons = [LuAward, LuShieldCheck, LuMessageCircle, LuCompass] as const
@@ -58,8 +59,9 @@ export function DifferentialsSection() {
         <div className="relative aspect-[358/425] w-full overflow-hidden rounded-sm lg:hidden">
           <BreakpointImage
             src="/images/airplane-diff.webp"
+            avif="/images/airplane-diff.avif"
             media="(max-width: 1023px)"
-            alt=""
+            alt={imageAlt.differentials}
             width={358}
             height={425}
             className="absolute inset-0 size-full object-cover"

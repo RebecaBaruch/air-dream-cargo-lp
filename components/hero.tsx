@@ -12,6 +12,7 @@ import { BreakpointImage } from "@/components/breakpoint-image";
 import { Button } from "@/components/button";
 import { useLanguage } from "@/components/language-provider";
 import { Navbar } from "@/components/navbar";
+import { imageAlt } from "@/lib/seo/image-alt";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 function revealDelay(ms: number): CSSProperties {
@@ -66,7 +67,7 @@ export function Hero() {
           src="/images/hero-image-desktop-hq.webp"
           avif="/images/hero-image-desktop.avif"
           media="(min-width: 1024px)"
-          alt=""
+          alt={imageAlt.hero}
           width={1440}
           height={700}
           priority
@@ -162,7 +163,7 @@ export function Hero() {
           src="/images/hero-image-mobile.webp"
           avif="/images/hero-image-mobile.avif"
           media="(max-width: 1023px)"
-          alt=""
+          alt={imageAlt.hero}
           width={390}
           height={423}
           priority

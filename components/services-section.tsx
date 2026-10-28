@@ -2,7 +2,9 @@
 
 import { LuFileCheck, LuGlobe, LuHandshake } from "react-icons/lu";
 import { useLanguage } from "@/components/language-provider";
+import { OptimizedImage } from "@/components/optimized-image";
 import { ServiceCard } from "@/components/service-card";
+import { imageAlt } from "@/lib/seo/image-alt";
 
 const serviceIcons = [LuGlobe, LuHandshake, LuFileCheck] as const;
 
@@ -15,38 +17,35 @@ function ServicesMediaGrid({ className }: { className?: string }) {
       className={`flex min-h-0 flex-col ${mediaGapClass} lg:col-start-2 lg:row-start-2 ${className ?? ""}`}
     >
       <div className="relative aspect-[883/307] w-full shrink-0 overflow-hidden rounded-sm">
-        <img
+        <OptimizedImage
           src="/images/shipping-01.webp"
-          alt=""
+          avif="/images/shipping-01.avif"
+          alt={imageAlt.shippingMain}
           width={883}
           height={307}
-          decoding="async"
-          loading="lazy"
           sizes="(min-width: 1024px) 55vw, 100vw"
           className="absolute inset-0 size-full object-cover"
         />
       </div>
       <div className={`grid min-h-0 flex-1 grid-cols-2 ${mediaGapClass}`}>
         <div className="relative aspect-[430/307] min-h-0 overflow-hidden rounded-sm lg:aspect-auto lg:h-full">
-          <img
+          <OptimizedImage
             src="/images/shipping-02.webp"
-            alt=""
+            avif="/images/shipping-02.avif"
+            alt={imageAlt.shippingSecondaryA}
             width={430}
             height={307}
-            decoding="async"
-            loading="lazy"
             sizes="(min-width: 1024px) 27vw, 50vw"
             className="absolute inset-0 size-full object-cover"
           />
         </div>
         <div className="relative aspect-[430/307] min-h-0 overflow-hidden rounded-sm lg:aspect-auto lg:h-full">
-          <img
+          <OptimizedImage
             src="/images/shipping-03.webp"
-            alt=""
+            avif="/images/shipping-03.avif"
+            alt={imageAlt.shippingSecondaryB}
             width={430}
             height={307}
-            decoding="async"
-            loading="lazy"
             sizes="(min-width: 1024px) 27vw, 50vw"
             className="absolute inset-0 size-full object-cover"
           />
@@ -66,12 +65,12 @@ export function ServicesSection() {
       className="below-fold bg-gray-0 px-4 py-16 lg:px-[4.44%] lg:py-[clamp(4rem,5.56vw,5rem)]"
     >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 lg:grid-cols-[38.75fr_61.25fr] lg:grid-rows-[auto_minmax(0,auto)] lg:items-scratch lg:gap-x-[clamp(1.5rem,4.17vw,3.75rem)] lg:gap-y-[clamp(1.5rem,2.22vw,2.5rem)]">
-        <p className="flex items-start text-1 leading-14 font-semibold text-gray-900 lg:col-start-1 lg:row-start-1 lg:text-2 lg:leading-6">
+        <div className="flex items-start text-1 leading-14 font-semibold text-gray-900 lg:col-start-1 lg:row-start-1 lg:text-2 lg:leading-6">
           <div className="flex items-center gap-2">
             <span aria-hidden className="size-2 shrink-0 bg-gray-900" />
             {t.services.eyebrow}
           </div>
-        </p>
+        </div>
 
         <h2
           id="services-heading"

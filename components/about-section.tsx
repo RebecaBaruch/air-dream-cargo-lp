@@ -2,20 +2,21 @@
 
 import { BsArrowRightShort } from "react-icons/bs";
 import { Button } from "@/components/button";
+import { OptimizedImage } from "@/components/optimized-image";
 import { useLanguage } from "@/components/language-provider";
+import { imageAlt } from "@/lib/seo/image-alt";
 
 function AboutImage({ className }: { className?: string }) {
   return (
     <div
       className={`relative aspect-[578/342] w-full overflow-hidden rounded-sm ${className ?? ""}`}
     >
-      <img
+      <OptimizedImage
         src="/images/workers.webp"
-        alt=""
+        avif="/images/workers.avif"
+        alt={imageAlt.about}
         width={578}
         height={342}
-        decoding="async"
-        loading="lazy"
         sizes="(min-width: 1024px) 36rem, 100vw"
         className="absolute inset-0 size-full object-cover"
       />

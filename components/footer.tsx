@@ -27,9 +27,9 @@ const socialLinks = [
 
 function FooterHeading({ children }: { children: string }) {
   return (
-    <h2 className="text-3 leading-5 font-semibold tracking-1 text-cyan-900 uppercase lg:text-4 lg:leading-4">
+    <p className="text-3 leading-5 font-semibold tracking-1 text-cyan-900 uppercase lg:text-4 lg:leading-4">
       {children}
-    </h2>
+    </p>
   )
 }
 
@@ -163,7 +163,7 @@ function FooterLegalBar({
       <div className="mx-auto flex max-w-[1440px] flex-col gap-3 text-0 leading-18 font-normal tracking-2 text-gray-0 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:text-1 lg:leading-14">
         <p>{copyright}</p>
         <a
-          href="#"
+          href="/privacidade"
           className="w-fit transition-colors hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-0"
         >
           {privacy}
