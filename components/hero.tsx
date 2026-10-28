@@ -9,7 +9,7 @@ export function Hero() {
   const { t } = useLanguage();
 
   const stats = [
-    { label: t.hero.statCountries, value: "+26" },
+    { label: t.hero.statCountries, value: "+80" },
     { label: t.hero.statSupport, value: "24/7" },
     { label: t.hero.statPunctuality, value: "99%" },
   ] as const;
@@ -64,7 +64,7 @@ export function Hero() {
 
             <div className="flex flex-wrap gap-2 xl:gap-4">
               <Button
-                href="#contato"
+                href="https://wa.me/5511976130335"
                 size="lg"
                 className="max-xl:h-[46px]! max-xl:gap-1! max-xl:px-2! max-xl:text-1! max-xl:leading-6!"
               >

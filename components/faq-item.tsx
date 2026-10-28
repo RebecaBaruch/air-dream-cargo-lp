@@ -1,35 +1,38 @@
-'use client'
+"use client";
 
-import { useId } from 'react'
-import { LuMinus, LuPlus } from 'react-icons/lu'
+import { Button } from "@/components/button";
+import { useId } from "react";
+import { LuMinus, LuPlus } from "react-icons/lu";
 
 type FaqItemProps = {
-  index: string
-  question: string
-  answer: string
-  open: boolean
-  onToggle: () => void
-}
+  index: string;
+  question: string;
+  answer: string;
+  ctaLabel?: string;
+  open: boolean;
+  onToggle: () => void;
+};
 
 function classNames(...parts: Array<string | false | undefined>) {
-  return parts.filter(Boolean).join(' ')
+  return parts.filter(Boolean).join(" ");
 }
 
 export function FaqItem({
   index,
   question,
   answer,
+  ctaLabel,
   open,
   onToggle,
 }: FaqItemProps) {
-  const buttonId = useId()
-  const panelId = useId()
+  const buttonId = useId();
+  const panelId = useId();
 
   return (
     <article
       className={classNames(
-        'overflow-hidden rounded-sm border border-gray-200 transition-colors duration-300 ease-out',
-        open ? 'bg-cyan-100' : 'bg-gray-0',
+        "overflow-hidden rounded-sm border border-gray-200 transition-colors duration-300 ease-out",
+        open ? "bg-cyan-100" : "bg-gray-0",
       )}
     >
       <h3 className="m-0">
@@ -58,14 +61,14 @@ export function FaqItem({
           >
             <LuPlus
               className={classNames(
-                'absolute size-5 transition-all duration-300 ease-out',
-                open ? 'scale-75 opacity-0' : 'scale-100 opacity-100',
+                "absolute size-5 transition-all duration-300 ease-out",
+                open ? "scale-75 opacity-0" : "scale-100 opacity-100",
               )}
             />
             <LuMinus
               className={classNames(
-                'absolute size-5 transition-all duration-300 ease-out',
-                open ? 'scale-100 opacity-100' : 'scale-75 opacity-0',
+                "absolute size-5 transition-all duration-300 ease-out",
+                open ? "scale-100 opacity-100" : "scale-75 opacity-0",
               )}
             />
           </span>
@@ -78,16 +81,28 @@ export function FaqItem({
         aria-labelledby={buttonId}
         aria-hidden={!open}
         className={classNames(
-          'grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none',
-          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+          "grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
-        <div className="overflow-hidden">
+        <div className="flex flex-col overflow-hidden">
           <p className="-mt-1 px-[clamp(1rem,1.11vw,1.25rem)] pb-[clamp(1rem,1.11vw,1.25rem)] pl-[calc(clamp(1rem,1.11vw,1.25rem)+2.25rem)] text-1 leading-14 font-normal tracking-2 text-gray-700 lg:-mt-2 lg:px-[clamp(1.25rem,1.39vw,1.5rem)] lg:pb-[clamp(1.25rem,1.39vw,1.5rem)] lg:pl-[calc(clamp(1.25rem,1.39vw,1.5rem)+2.75rem)] lg:text-2 lg:leading-6">
             {answer}
           </p>
+          {ctaLabel && (
+            <div className="w-fit px-[clamp(1rem,1.11vw,1.25rem)] pb-[clamp(1rem,1.11vw,1.25rem)] pl-[calc(clamp(1rem,1.11vw,1.25rem)+2.25rem)] lg:px-[clamp(1.25rem,1.39vw,1.5rem)] lg:pb-[clamp(1.25rem,1.39vw,1.5rem)] lg:pl-[calc(clamp(1.25rem,1.39vw,1.5rem)+2.75rem)]">
+              <Button
+                href="https://wa.me/5511976130335"
+                size="lg"
+                tone="secondary"
+                className="max-xl:h-[46px]! max-xl:gap-1! max-xl:px-2! text-0.25 max-xl:text-0.5"
+              >
+                {ctaLabel}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </article>
-  )
+  );
 }

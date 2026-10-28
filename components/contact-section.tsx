@@ -57,24 +57,24 @@ export function ContactSection() {
 
             <div className="grid w-full grid-cols-2 gap-2 lg:flex lg:w-auto lg:gap-4">
               <Button
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5511976130335"
                 size="lg"
                 variant="filled"
                 tone="secondary"
                 icon={FaWhatsapp}
                 iconSize={20}
-                className={`${mobileButtonClass} lg:h-[56px]! lg:w-auto lg:px-4! lg:text-3! lg:leading-5!`}
+                className={`${mobileButtonClass} lg:h-[56px]! lg:w-auto lg:px-4! lg:text-2! lg:leading-5!`}
               >
                 {t.contact.whatsapp}
               </Button>
               <Button
-                href="mailto:contato@airdreancargo.com.br"
+                href="mailto:contato@airdreamcargo.com.br"
                 size="lg"
                 variant="filled"
                 tone="primary"
                 icon={LuMail}
                 iconSize={20}
-                className={`${mobileButtonClass} bg-gray-0! text-gray-800! hover:bg-gray-100! lg:h-[56px]! lg:w-auto lg:px-4! lg:text-3! lg:leading-5!`}
+                className={`${mobileButtonClass} bg-gray-0! text-gray-800! hover:bg-gray-100! lg:h-[56px]! lg:w-auto lg:px-4! lg:text-2! lg:leading-5!`}
               >
                 {t.contact.email}
               </Button>
