@@ -64,10 +64,10 @@ export function ServiceCard({
       )}
 
       <div className="flex min-w-0 flex-col gap-[clamp(0.25rem,0.42vw,0.5rem)]">
-        <h3 className="font-semibold tracking-0 text-cyan-900 text-[clamp(1.25rem,1.39vw,1.5rem)] leading-[1.25] lg:leading-[1.2]">
+        <h3 className="text-3 font-semibold leading-[1.2] tracking-0 text-cyan-900 lg:text-[clamp(1.25rem,1.39vw,1.5rem)] lg:leading-[1.2]">
           {title}
         </h3>
-        <p className="font-normal tracking-2 text-gray-700 text-[clamp(0.875rem,1.11vw,1.125rem)] leading-[1.4] lg:leading-6">
+        <p className="text-body font-normal leading-body tracking-2 text-gray-700 lg:text-2">
           {description}
         </p>
       </div>

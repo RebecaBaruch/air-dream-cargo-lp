@@ -51,7 +51,7 @@ export function AboutSection() {
           <AboutImage className="lg:hidden" />
 
           <div className="flex flex-col items-start gap-3 lg:gap-4">
-            <p className="text-1 leading-14 font-normal tracking-2 text-gray-700 lg:text-2 lg:leading-6">
+            <p className="text-body leading-body font-normal tracking-2 text-gray-700 lg:text-2">
               {t.about.body}
             </p>
             <Button

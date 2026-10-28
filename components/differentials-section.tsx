@@ -48,7 +48,7 @@ export function DifferentialsSection() {
             </span>
           </h2>
 
-          <p className="max-w-[22rem] text-1 leading-14 font-normal tracking-2 text-gray-700 lg:hidden">
+          <p className="max-w-[22rem] text-body leading-body font-normal tracking-2 text-gray-700 lg:hidden">
             {t.differentials.introMobile}
           </p>
           <p className="hidden max-w-[40rem] text-2 leading-6 font-normal tracking-2 text-gray-700 lg:block">
