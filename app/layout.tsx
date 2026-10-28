@@ -1,12 +1,47 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { Providers } from '@/components/providers';
+import { StructuredData } from '@/components/structured-data';
+import {
+  defaultDescription,
+  defaultTitle,
+  getSiteUrl,
+  siteName,
+} from '@/lib/site';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Air Dream Cargo',
-  description:
-    'Coordenação logística e agenciamento aéreo rápido e seguro.',
+  metadataBase: getSiteUrl(),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${siteName}`,
+  },
+  description: defaultDescription,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: '/',
+    siteName,
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [
+      {
+        url: '/images/hero-image-desktop-hq.webp',
+        width: 1440,
+        height: 700,
+        alt: 'Air Dream Cargo — agenciamento aéreo e logística internacional',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ['/images/hero-image-desktop-hq.webp'],
+  },
   icons: {
     icon: [{ url: '/Ad-fav-icon.svg', type: 'image/svg+xml' }],
     shortcut: '/Ad-fav-icon.svg',
@@ -64,6 +99,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased text-gray-900 bg-gray-0">
+        <StructuredData />
         <Providers>{children}</Providers>
       </body>
     </html>

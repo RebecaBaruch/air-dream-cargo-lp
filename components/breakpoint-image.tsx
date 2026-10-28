@@ -1,6 +1,3 @@
-const TRANSPARENT_PIXEL =
-  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
-
 type BreakpointImageProps = {
   src: string
   avif?: string
@@ -31,7 +28,7 @@ export function BreakpointImage({
       ) : null}
       <source type="image/webp" media={media} srcSet={src} sizes={sizes} />
       <img
-        src={TRANSPARENT_PIXEL}
+        src={src}
         alt={alt}
         width={width}
         height={height}
