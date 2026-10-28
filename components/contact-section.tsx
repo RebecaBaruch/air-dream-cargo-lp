@@ -52,7 +52,7 @@ export function ContactSection() {
               >
                 {t.contact.heading}
               </h2>
-              <p className="text-left text-1 leading-14 font-normal tracking-2 text-gray-0 lg:max-w-[28rem] lg:text-2 lg:leading-6">
+              <p className="text-left text-body leading-body font-normal tracking-2 text-gray-0 lg:max-w-[28rem] lg:text-2">
                 {t.contact.description}
               </p>
             </div>

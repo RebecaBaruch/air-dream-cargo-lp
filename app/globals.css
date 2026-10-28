@@ -50,6 +50,7 @@
   /* Font Sizes (px -> rem) */
   --text-0: 0.75rem;   /* 12px */
   --text-1: 0.875rem;  /* 14px */
+  --text-body: 1.125rem; /* 18px — corpo mobile */
   --text-2: 1.125rem;  /* 18px */
   --text-3: 1.25rem;   /* 20px */
   --text-4: 1.5rem;    /* 24px */
@@ -67,6 +68,8 @@
   --leading-4: 36px;
   --leading-5: 32px;
   --leading-6: 28px;
+  --leading-body: 1.375rem; /* 22px — corpo mobile */
+  --leading-body-long: 1.5rem; /* 24px — parágrafos longos (FAQ) */
   --leading-14: 20px;
   --leading-18: 16px;
 

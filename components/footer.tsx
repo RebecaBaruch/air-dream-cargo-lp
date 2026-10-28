@@ -96,7 +96,7 @@ function FooterContactBlock({ heading }: { heading: string }) {
   return (
     <div className="flex flex-col gap-3">
       <FooterHeading>{heading}</FooterHeading>
-      <div className="flex flex-col gap-2 text-1 leading-14 font-normal tracking-2 text-gray-700 lg:text-2 lg:leading-6">
+      <div className="flex flex-col gap-2 text-body leading-body font-normal tracking-2 text-gray-700 lg:text-2">
         <a
           href={`mailto:${contactEmail}`}
           className="w-fit transition-colors hover:text-cyan-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700"
@@ -124,7 +124,7 @@ function FooterLocationBlock({
   return (
     <div className="flex flex-col gap-3">
       <FooterHeading>{heading}</FooterHeading>
-      <p className="max-w-[22rem] text-1 leading-14 font-normal tracking-2 text-gray-700 lg:max-w-[26rem] lg:text-2 lg:leading-6">
+      <p className="max-w-[22rem] text-body leading-body font-normal tracking-2 text-gray-700 lg:max-w-[26rem] lg:text-2">
         {address}
       </p>
     </div>

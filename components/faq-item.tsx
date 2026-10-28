@@ -51,7 +51,7 @@ export function FaqItem({
             {index}
           </span>
 
-          <span className="min-w-0 flex-1 pt-0.5 text-1 leading-14 font-semibold tracking-1 text-cyan-900 uppercase lg:text-2 lg:leading-6">
+          <span className="min-w-0 flex-1 pt-0.5 text-body leading-body font-semibold tracking-1 text-cyan-900 lg:text-2 lg:uppercase">
             {question}
           </span>
 
@@ -86,7 +86,7 @@ export function FaqItem({
         )}
       >
         <div className="flex flex-col overflow-hidden">
-          <p className="-mt-1 px-[clamp(1rem,1.11vw,1.25rem)] pb-[clamp(1rem,1.11vw,1.25rem)] pl-[calc(clamp(1rem,1.11vw,1.25rem)+2.25rem)] text-1 leading-14 font-normal tracking-2 text-gray-700 lg:-mt-2 lg:px-[clamp(1.25rem,1.39vw,1.5rem)] lg:pb-[clamp(1.25rem,1.39vw,1.5rem)] lg:pl-[calc(clamp(1.25rem,1.39vw,1.5rem)+2.75rem)] lg:text-2 lg:leading-6">
+          <p className="-mt-1 px-[clamp(1rem,1.11vw,1.25rem)] pb-[clamp(1rem,1.11vw,1.25rem)] pl-[calc(clamp(1rem,1.11vw,1.25rem)+2.25rem)] text-body leading-body-long font-normal tracking-2 text-gray-700 lg:-mt-2 lg:px-[clamp(1.25rem,1.39vw,1.5rem)] lg:pb-[clamp(1.25rem,1.39vw,1.5rem)] lg:pl-[calc(clamp(1.25rem,1.39vw,1.5rem)+2.75rem)] lg:text-2 lg:leading-6">
             {answer}
           </p>
           {ctaLabel && (
