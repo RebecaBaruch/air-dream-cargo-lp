@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import { BsArrowRightShort } from 'react-icons/bs'
-import { Button } from '@/components/button'
-import { useLanguage } from '@/components/language-provider'
+import { BsArrowRightShort } from "react-icons/bs";
+import { Button } from "@/components/button";
+import { useLanguage } from "@/components/language-provider";
 
 function AboutImage({ className }: { className?: string }) {
   return (
     <div
-      className={`relative aspect-[578/342] w-full overflow-hidden rounded-sm ${className ?? ''}`}
+      className={`relative aspect-[578/342] w-full overflow-hidden rounded-sm ${className ?? ""}`}
     >
       <img
         src="/images/workers.webp"
@@ -20,11 +20,11 @@ function AboutImage({ className }: { className?: string }) {
         className="absolute inset-0 size-full object-cover"
       />
     </div>
-  )
+  );
 }
 
 export function AboutSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section
@@ -50,14 +50,11 @@ export function AboutSection() {
           <AboutImage className="lg:hidden" />
 
           <div className="flex flex-col items-start gap-3 lg:gap-4">
-            <h3 className="text-3 leading-5 font-semibold tracking-0 text-cyan-900 lg:text-4 lg:leading-4">
-              {t.about.subheading}
-            </h3>
             <p className="text-1 leading-14 font-normal tracking-2 text-gray-700 lg:text-2 lg:leading-6">
               {t.about.body}
             </p>
             <Button
-              href="#contato"
+              href="https://wa.me/5511976130335"
               variant="link"
               tone="secondary"
               size="md"
@@ -73,5 +70,5 @@ export function AboutSection() {
         <AboutImage className="hidden lg:block" />
       </div>
     </section>
-  )
+  );
 }

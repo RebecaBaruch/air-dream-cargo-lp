@@ -41,6 +41,7 @@ export function FaqSection() {
               index={String(index + 1).padStart(2, '0')}
               question={item.question}
               answer={item.answer}
+              ctaLabel={item.cta ? t.faq.ctaLabel : undefined}
               open={openIndex === index}
               onToggle={() => handleToggle(index)}
             />

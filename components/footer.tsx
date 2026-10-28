@@ -4,23 +4,23 @@ import type { IconType } from 'react-icons'
 import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa6'
 import { useLanguage } from '@/components/language-provider'
 
-const contactEmail = 'example@email.com.br'
-const contactPhone = '+55 011 1234-5678'
+const contactEmail = 'contato@airdreamcargo.com.br'
+const contactPhone = '+55 011 97613-0335'
 
 const socialLinks = [
   {
     labelKey: 'whatsapp' as const,
-    href: 'https://wa.me/5500000000000',
+    href: 'https://wa.me/5511976130335',
     icon: FaWhatsapp,
   },
   {
     labelKey: 'instagram' as const,
-    href: 'https://instagram.com/',
+    href: 'https://instagram.com/airdreamcargo',
     icon: FaInstagram,
   },
   {
     labelKey: 'linkedin' as const,
-    href: 'https://linkedin.com/',
+    href: 'https://linkedin.com/AirDreamCargo',
     icon: FaLinkedin,
   },
 ] as const
