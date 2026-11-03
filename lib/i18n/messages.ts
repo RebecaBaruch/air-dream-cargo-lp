@@ -198,8 +198,7 @@ export const messages: Record<Language, Messages> = {
       tagline: "Soluções em agenciamento e assessoria operacional.",
       contactHeading: "Entre em contato",
       locationHeading: "Onde estamos",
-      address:
-        "Avenida Profa Ida Kolb 225, Apt 153, Jardim das Laranjeiras, São Paulo SP 02518-000",
+      address: "Avenida Profa Ida Kolb, 225 – Bl 12 / sala 153 – Casa Verde, São Paulo – SP – 02518-000",
       socialAria: "Redes sociais",
       copyright: "© 2026 Air Dream Cargo. Todos os direitos reservados.",
       privacy: "Política de Privacidade",
@@ -332,7 +331,7 @@ export const messages: Record<Language, Messages> = {
       contactHeading: "Contact us",
       locationHeading: "Where we are",
       address:
-        "Avenida Profa Ida Kolb 225, Apt 153, Jardim das Laranjeiras, São Paulo SP 02518-000",
+        "Avenida Profa Ida Kolb, 225 – Bl 12 / sala 153 – Casa Verde, São Paulo – SP – 02518-000",
       socialAria: "Social media",
       copyright: "© 2026 Air Dream Cargo. All rights reserved.",
       privacy: "Privacy Policy",
@@ -467,7 +466,7 @@ export const messages: Record<Language, Messages> = {
       contactHeading: "Contáctenos",
       locationHeading: "Dónde estamos",
       address:
-        "Avenida Profa Ida Kolb 225, Apt 153, Jardim das Laranjeiras, São Paulo SP 02518-000",
+        "Avenida Profa Ida Kolb, 225 – Bl 12 / sala 153 – Casa Verde, São Paulo – SP – 02518-000",
       socialAria: "Redes sociales",
       copyright: "© 2026 Air Dream Cargo. Todos los derechos reservados.",
       privacy: "Política de Privacidad",
