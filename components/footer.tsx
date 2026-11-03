@@ -5,7 +5,7 @@ import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa6'
 import { useLanguage } from '@/components/language-provider'
 
 const contactEmail = 'contato@airdreamcargo.com.br'
-const contactPhone = '+55 011 97613-0335'
+const contactPhone = '+55 11 97613-0335'
 
 const socialLinks = [
   {
@@ -20,7 +20,7 @@ const socialLinks = [
   },
   {
     labelKey: 'linkedin' as const,
-    href: 'https://linkedin.com/AirDreamCargo',
+    href: 'https://linkedin.com/company/air-dream-cargo',
     icon: FaLinkedin,
   },
 ] as const
